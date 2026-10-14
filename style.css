@@ -50,8 +50,8 @@ a{color:inherit}
 .portrait{position:relative;display:grid;place-items:center;aspect-ratio:1/1;max-width:460px;width:100%;justify-self:center}
 .glow{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,var(--ring-glow),transparent 68%);filter:blur(20px)}
 .ring{position:relative;width:78%;aspect-ratio:1/1;border-radius:50%;padding:7%;background:conic-gradient(from 210deg,var(--accent),var(--accent-2) 35%,var(--accent) 60%,transparent 62%,transparent 100%);-webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 13px),#000 calc(100% - 12px));mask:radial-gradient(farthest-side,#0000 calc(100% - 13px),#000 calc(100% - 12px))}
-.photo{position:absolute;width:70%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,var(--surface),var(--bg-2));border:1px solid var(--line);display:grid;place-items:end center}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo{position:absolute;top:50%;left:50%;width:70%;height:0;padding-bottom:70%;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;background:linear-gradient(160deg,var(--surface),var(--bg-2));border:1px solid var(--line)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center top;display:block}
 .sil{position:relative;width:100%;height:100%}
 .sil::before{content:"";position:absolute;left:50%;top:24%;width:30%;aspect-ratio:1/1;transform:translateX(-50%);border-radius:50%;background:var(--dim)}
 .sil::after{content:"";position:absolute;left:50%;bottom:-8%;width:68%;height:42%;transform:translateX(-50%);border-radius:50% 50% 0 0;background:var(--dim)}
@@ -121,9 +121,14 @@ footer{margin-block:48px 32px;display:flex;justify-content:space-between;gap:12p
   .hero{grid-template-columns:minmax(0,1fr);text-align:center;padding-block:28px 28px;min-height:0;gap:20px}
   .intro .name::before{display:none}
   .cta{justify-content:center}
-  .portrait{max-width:340px;order:2}
+  .portrait{width:min(100%,320px);max-width:320px;height:auto;align-self:center;order:2;margin-inline:auto}
   .about{grid-template-columns:minmax(0,1fr);gap:40px}
   .tech{justify-content:center}
   section{padding-block:72px 0}
+}
+@media (max-width:480px){
+  .portrait{width:min(100%,280px);max-width:280px}
+  .ring{width:84%}
+  .photo{width:72%;padding-bottom:72%}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.proj{transition:none}}
