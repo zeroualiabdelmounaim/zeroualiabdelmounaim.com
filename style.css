@@ -57,8 +57,7 @@ a{color:inherit}
 .sil::after{content:"";position:absolute;left:50%;bottom:-8%;width:68%;height:42%;transform:translateX(-50%);border-radius:50% 50% 0 0;background:var(--dim)}
 
 .tech{display:flex;justify-content:space-between;gap:18px 28px;flex-wrap:wrap;padding-block:22px;border-block:1px solid var(--line);font-size:14px;color:var(--dim)}
-.tech span{transition:color .15s;cursor:default}
-.tech span:hover{color:var(--fg)}
+.tech span{cursor:default}
 
 /* about */
 section{padding-block:96px 0}
